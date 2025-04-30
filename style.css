@@ -38,11 +38,14 @@ form {
   border-radius: 6px;
 }
 
-.blocks {
+#blocksContainer {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
+  margin-bottom: 20px;
+  position: relative; /* garante empilhamento correto */
+  z-index: 1;
 }
 
 .block {
@@ -54,21 +57,39 @@ form {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  position: relative;
+  z-index: 1; /* cada bloco tem seu próprio contexto */
 }
 
 .block label {
   font-weight: 600;
 }
 
-.block input, .block textarea {
+.block input,
+.block textarea {
   width: 100%;
   padding: 10px;
   font-size: 14px;
   border: 1px solid #ccc;
   border-radius: 6px;
   background-color: #fff;
+  position: relative;
+  z-index: 2;
 }
 
+.block textarea {
+  min-height: 120px; /* garante altura suficiente */
+  resize: vertical; /* permite ajustar sem quebrar layout */
+}
+
+.block textarea:focus {
+  outline: 2px solid #f59e0b;
+  z-index: 3;
+  background-color: #fffbe6;
+  position: relative;
+}
+
+/* Botões */
 .buttons {
   text-align: center;
   margin-top: 30px;
@@ -90,6 +111,7 @@ button:hover {
   background-color: #d97706;
 }
 
+/* Saída visual */
 #outputWrapper {
   margin-top: 50px;
   padding: 30px;
@@ -138,4 +160,21 @@ button:hover {
   width: 100%;
   font-size: 16px;
   color: #1e293b;
+}
+
+#createBlockBtn {
+  display: block;
+  margin: 0 auto 30px auto;
+  padding: 10px 20px;
+  font-size: 15px;
+  background-color: #10b981;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#createBlockBtn:hover {
+  background-color: #059669;
 }
