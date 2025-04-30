@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mapa Mental</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Mapa Mental</h1>
+    <form id="mindMapForm">
+      <div class="main-node">
+        <label for="chapterTitle">Capítulo:</label>
+        <input type="text" id="chapterTitle" name="chapterTitle" required />
+      </div>
+
+      <div class="blocks">
+        <!-- 9 blocos de subcapítulos -->
+        <div class="block" id="block1">
+          <label>Subcapítulo 1:</label>
+          <input type="text" name="subchapter1" required />
+          <label>Tópicos:</label>
+          <textarea name="topics1" maxlength="120" required></textarea>
+        </div>
+
+        <div class="block" id="block2">
+          <label>Subcapítulo 2:</label>
+          <input type="text" name="subchapter2" required />
+          <label>Tópicos:</label>
+          <textarea name="topics2" maxlength="120" required></textarea>
+        </div>
+
+        <div class="block" id="block3">
+          <label>Subcapítulo 3:</label>
+          <input type="text" name="subchapter3" required />
+          <label>Tópicos:</label>
+          <textarea name="topics3" maxlength="120" required></textarea>
+        </div>
+
+        <div class="block" id="block4">
+          <label>Subcapítulo 4:</label>
+          <input type="text" name="subchapter4" required />
+          <label>Tópicos:</label>
+          <textarea name="topics4" maxlength="120" required></textarea>
+        </div>
+
+        <div class="block" id="block5">
+          <label>Subcapítulo 5:</label>
+          <input type="text" name="subchapter5" required />
+          <label>Tópicos:</label>
+          <textarea name="topics5" maxlength="120" required></textarea>
+        </div>
+
+        <div class="block" id="block6">
+          <label>Subcapítulo 6:</label>
+          <input type="text" name="subchapter6" required />
+          <label>Tópicos:</label>
+          <textarea name="topics6" maxlength="120" required></textarea>
+        </div>
+
+        <div class="block" id="block7">
+          <label>Subcapítulo 7:</label>
+          <input type="text" name="subchapter7" required />
+          <label>Tópicos:</label>
+          <textarea name="topics7" maxlength="120" required></textarea>
+        </div>
+
+        <div class="block" id="block8">
+          <label>Subcapítulo 8:</label>
+          <input type="text" name="subchapter8" required />
+          <label>Tópicos:</label>
+          <textarea name="topics8" maxlength="120" required></textarea>
+        </div>
+
+        <div class="block" id="block9">
+          <label>Subcapítulo 9:</label>
+          <input type="text" name="subchapter9" required />
+          <label>Tópicos:</label>
+          <textarea name="topics9" maxlength="120" required></textarea>
+        </div>
+      </div>
+
+      <div class="buttons">
+        <button type="button" onclick="generateMap(); exportToTxt();">Gerar Mapa</button>
+        <button type="button" onclick="clearFormAndPreview()">Limpar</button>
+      </div>
+    </form>
+
+    <div id="outputWrapper">
+      <h2 id="outputChapterTitle">Título do Capítulo</h2> <!-- Adicionado título aqui -->
+      <div id="output"></div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
