@@ -15,80 +15,26 @@
         <input type="text" id="chapterTitle" name="chapterTitle" required />
       </div>
 
-      <div class="blocks">
-        <!-- 9 blocos de subcapítulos -->
+      <div id="blocksContainer" class="blocks">
+        <!-- Bloco inicial -->
         <div class="block" id="block1">
           <label>Tópico 1:</label>
           <input type="text" name="subchapter1" required />
           <label>Subtópicos:</label>
           <textarea name="topics1" maxlength="120" required></textarea>
         </div>
-
-        <div class="block" id="block2">
-          <label>Tópico 2:</label>
-          <input type="text" name="subchapter2" required />
-          <label>Subtópicos:</label>
-          <textarea name="topics2" maxlength="120" required></textarea>
-        </div>
-
-        <div class="block" id="block3">
-          <label>Tópico 3:</label>
-          <input type="text" name="subchapter3" required />
-          <label>Subtópicos:</label>
-          <textarea name="topics3" maxlength="120" required></textarea>
-        </div>
-
-        <div class="block" id="block4">
-          <label>Tópico 4:</label>
-          <input type="text" name="subchapter4" required />
-          <label>Subtópicos:</label>
-          <textarea name="topics4" maxlength="120" required></textarea>
-        </div>
-
-        <div class="block" id="block5">
-          <label>Tópico 5:</label>
-          <input type="text" name="subchapter5" required />
-          <label>Subtópicos:</label>
-          <textarea name="topics5" maxlength="120" required></textarea>
-        </div>
-
-        <div class="block" id="block6">
-          <label>Tópico 6:</label>
-          <input type="text" name="subchapter6" required />
-          <label>Subtópicos:</label>
-          <textarea name="topics6" maxlength="120" required></textarea>
-        </div>
-
-        <div class="block" id="block7">
-          <label>Tópico 7:</label>
-          <input type="text" name="subchapter7" required />
-          <label>Subtópicos:</label>
-          <textarea name="topics7" maxlength="120" required></textarea>
-        </div>
-
-        <div class="block" id="block8">
-          <label>Tópico 8:</label>
-          <input type="text" name="subchapter8" required />
-          <label>Subtópicos:</label>
-          <textarea name="topics8" maxlength="120" required></textarea>
-        </div>
-
-        <div class="block" id="block9">
-          <label>Tópico 9:</label>
-          <input type="text" name="subchapter9" required />
-          <label>Subtópicos:</label>
-          <textarea name="topics9" maxlength="120" required></textarea>
-        </div>
       </div>
 
       <div class="buttons">
+        <button type="button" onclick="addSubchapter()">Criar Novo Tópico</button>
         <button type="button" onclick="generateMap(); exportToTxt();">Gerar Mapa</button>
         <button type="button" onclick="clearFormAndPreview()">Limpar</button>
       </div>
     </form>
 
+    <!-- Área de visualização do mapa mental -->
     <div id="outputWrapper">
-      <h2 id="outputChapterTitle">Título do Capítulo</h2> <!-- Adicionado título aqui -->
+      <div id="outputChapterTitle"></div>
       <div id="output"></div>
     </div>
   </div>
